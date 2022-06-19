@@ -156,13 +156,7 @@ void Vector::insert(const Value* values, size_t size, size_t pos) {
 }
 
 void Vector::insert(const Vector& vector, size_t pos) {
-	Value* bufArray = new Value[vector.size()];
-	
-	for (int h = 0; h < vector.size(); h++) {
-    	bufArray[h] = vector._data[h];
-  	}
-	
-	insert(bufArray,vector.size(),pos);
+	insert(vector._data, vector._size, pos);
 }
 
 void Vector::popBack() {
